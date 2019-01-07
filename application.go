@@ -19,7 +19,7 @@ type WebServivce struct {
 }
 
 func (ws *WebServivce) Initialize(user, password, dbname string, other string) {
-	connectionString := fmt.Sprintf("%s:%s@(http://127.0.0.1:8080)/%s?%s", user, password, dbname, other)
+	connectionString := fmt.Sprintf("%s:%s@/%s?%s", user, password, dbname, other)
 
 	var err error
 	ws.DB, err = sql.Open("mysql", connectionString)
